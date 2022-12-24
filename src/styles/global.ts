@@ -22,7 +22,7 @@ body {
 }
 
 body, input, textarea, button {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: 400;
     font-size: 1rem;
 }
