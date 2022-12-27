@@ -10,7 +10,12 @@ export const Container = styled.div`
 		),
 		url('src/assets/bg.jpg');
 	background-size: cover;
+	background-position: right;
 	padding: 3rem;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 `
 
 export const Header = styled.header`
@@ -30,6 +35,7 @@ export const SignUpWrapper = styled.div`
 
 	h3 span {
 		color: ${(props) => props.theme['red-500']};
+		cursor: pointer;
 	}
 `
 export const Headline = styled.h1`
@@ -37,19 +43,43 @@ export const Headline = styled.h1`
 	line-height: 150%;
 `
 
-export const Button = styled.button`
-	background: rgba(0, 0, 0, 0.6);
-	color: ${(props) => props.theme.white};
-	height: 5rem;
-	width: 5rem;
+export const LoginForm = styled.form`
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 
-	outline: none;
-	border: none;
-	border-radius: 9999px;
+	input {
+		height: 4rem;
+		padding: 1rem;
+		outline: none;
+		border: none;
+		border-radius: 4px;
 
-	position: absolute;
-	bottom: 2rem;
-	right: 2rem;
+		font-size: 1.4rem;
+		font-weight: bold;
+	}
 
-	cursor: pointer;
+	button {
+		height: 4rem;
+		background: ${(props) => props.theme['red-500']};
+		border: none;
+		outline: none;
+		border-radius: 4px;
+
+		color: ${(props) => props.theme.white};
+		font-weight: bold;
+		font-size: 1.4rem;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.8rem;
+
+		cursor: pointer;
+	}
+
+	span {
+		color: ${(props) => props.theme.white};
+		font-size: 1.2rem;
+	}
 `
