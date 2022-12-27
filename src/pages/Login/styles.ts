@@ -27,6 +27,15 @@ export const Header = styled.header`
 	margin-bottom: 3rem;
 `
 
+export const Button = styled.button`
+	background: transparent;
+	color: ${(props) => props.theme.white};
+	outline: none;
+	border: none;
+
+	cursor: pointer;
+`
+
 export const SignUpWrapper = styled.div`
 	display: flex;
 	flex-direction: column;

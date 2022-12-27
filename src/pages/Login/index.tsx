@@ -1,12 +1,24 @@
 import { ArrowLeft, PaperPlaneRight } from 'phosphor-react'
-import { Container, Header, Headline, LoginForm, SignUpWrapper } from './styles'
+import {
+	Button,
+	Container,
+	Header,
+	Headline,
+	LoginForm,
+	SignUpWrapper,
+} from './styles'
+import { Link } from 'react-router-dom'
 
 export function Login() {
 	return (
 		<Container>
 			<div>
 				<Header>
-					<ArrowLeft size={20} />
+					<Link to="/">
+						<Button>
+							<ArrowLeft size={20} />
+						</Button>
+					</Link>
 					<SignUpWrapper>
 						<h3>Não tem conta?</h3>
 						<h3>
