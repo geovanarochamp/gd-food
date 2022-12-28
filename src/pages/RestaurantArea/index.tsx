@@ -1,7 +1,12 @@
+import { NavigationIcons } from '../../components/NavigationIcons'
+import { UserHeader } from '../../components/UserHeader'
+
 export function RestaurantArea() {
 	return (
 		<>
-			<h1>RestaurantArea</h1>
+			<UserHeader userName={'Fred'} />
+			<h1>área do restaurante</h1>
+			<NavigationIcons />
 		</>
 	)
 }
