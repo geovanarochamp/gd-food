@@ -7,7 +7,6 @@ export const Header = styled.header`
 	align-items: center;
 	gap: 1rem;
 	color: ${(props) => props.theme['gray-300']};
-	margin-bottom: 3rem;
 	box-shadow: 0 0px 3px rgb(0 0 0 / 24%);
 `
 
