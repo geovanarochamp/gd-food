@@ -6,7 +6,7 @@ export const Container = styled.div`
 	background-image: linear-gradient(
 			to bottom,
 			rgb(0 0 0 / 100%),
-			rgb(0 0 0 / 0%)
+			rgb(0 0 0 / 10%)
 		),
 		url('src/assets/bg.jpg');
 	background-size: cover;
