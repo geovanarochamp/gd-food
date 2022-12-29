@@ -10,6 +10,11 @@ export const Container = styled.div`
 		),
 		url('src/assets/bg.jpg');
 	background-size: cover;
+
+	@media (min-width: 540px) {
+		display: flex;
+		justify-content: center;
+	}
 `
 
 export const Header = styled.header`

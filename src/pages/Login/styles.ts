@@ -25,6 +25,12 @@ export const Header = styled.header`
 	gap: 2rem;
 	color: ${(props) => props.theme.white};
 	margin-bottom: 3rem;
+
+	@media (min-width: 768px) {
+		svg {
+			scale: 1.5;
+		}
+	}
 `
 
 export const Button = styled.button`
@@ -46,10 +52,19 @@ export const SignUpWrapper = styled.div`
 		color: ${(props) => props.theme['red-500']};
 		cursor: pointer;
 	}
+
+	@media (min-width: 768px) {
+		font-size: 1.4rem;
+	}
 `
 export const Headline = styled.h1`
 	color: ${(props) => props.theme.white};
 	line-height: 150%;
+
+	@media (min-width: 768px) {
+		text-align: center;
+		font-size: 4rem;
+	}
 `
 
 export const LoginForm = styled.form`
@@ -90,5 +105,10 @@ export const LoginForm = styled.form`
 	span {
 		color: ${(props) => props.theme.white};
 		font-size: 1.2rem;
+	}
+
+	@media (min-width: 768px) {
+		width: 30vw;
+		margin: auto;
 	}
 `

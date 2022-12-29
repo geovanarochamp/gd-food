@@ -11,6 +11,12 @@ export const Container = styled.div`
 		height: 10rem;
 		object-fit: cover;
 	}
+
+	@media (min-width: 768px) {
+		img {
+			height: 15rem;
+		}
+	}
 `
 export const RestaurantWrapper = styled.div`
 	display: flex;

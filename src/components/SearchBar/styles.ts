@@ -40,4 +40,8 @@ export const Container = styled.div`
 	&:focus-within {
 		box-shadow: 0 0 0 2px ${(props) => props.theme['red-500']};
 	}
+
+	@media (min-width: 768px) {
+		width: calc(70vw + 1.5rem);
+	}
 `
