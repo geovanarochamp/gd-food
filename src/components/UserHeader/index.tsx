@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { List, MapPin } from 'phosphor-react'
 import { useEffect, useState } from 'react'
 import { Button, Header, UserInfo } from './styles'
@@ -22,27 +23,22 @@ export function UserHeader({ userName }: UserHeaderProps) {
 
 		await fetch(url)
 			.then((response) => response.json())
-			.then((data) => {
-				let street
+			.then((data: google.maps.GeocoderResponse) => {
 				data.results.map((item) => {
-					item.types.map((type) => {
-						if (type === 'route') {
-							item.address_components.map((addressComponent) =>
-								addressComponent.types.map((addressComponentType) => {
-									if (addressComponentType === 'route') {
-										street = addressComponent.short_name
-									}
-								}),
-							)
-						}
+					return item.types.map((type) => {
+						return (
+							type.includes('route') &&
+							item.address_components.map((addressComponent) => {
+								return addressComponent.types.map((addressComponentType) => {
+									return (
+										addressComponentType.includes('route') &&
+										setFormatLocation(addressComponent.short_name)
+									)
+								})
+							})
+						)
 					})
 				})
-
-				if (street) {
-					setFormatLocation(street)
-				} else {
-					setFormatLocation('')
-				}
 			})
 			.catch((error) => {
 				console.log(error)

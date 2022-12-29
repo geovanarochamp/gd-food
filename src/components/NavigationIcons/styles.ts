@@ -5,7 +5,7 @@ export const Container = styled.div`
 	justify-content: space-between;
 	box-shadow: 0 0px 3px rgb(0 0 0 / 24%);
 
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 `

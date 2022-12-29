@@ -3,7 +3,7 @@ import { RestaurantThumb } from '../../components/RestaurantThumb'
 import { SearchBar } from '../../components/SearchBar'
 import { UserHeader } from '../../components/UserHeader'
 
-export function SearchRestaurant() {
+export function ListRestaurants() {
 	return (
 		<>
 			<UserHeader userName={'Fred'} />

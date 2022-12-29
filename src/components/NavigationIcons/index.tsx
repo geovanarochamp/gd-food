@@ -5,7 +5,7 @@ import { Button, Container } from './styles'
 export function NavigationIcons() {
 	return (
 		<Container>
-			<Link to="/">
+			<Link to="/listrestaurants">
 				<Button>
 					<House size={20} />
 				</Button>
