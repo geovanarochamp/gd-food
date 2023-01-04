@@ -1,8 +1,9 @@
-import { NavigationIcons } from '../../components/NavigationIcons'
+import { TabBar } from '../../components/TabBar'
 import { RestaurantThumb } from '../../components/RestaurantThumb'
 import { SearchBar } from '../../components/SearchBar'
 import { UserHeader } from '../../components/UserHeader'
 import { Content } from './styles'
+import { SideBar } from '../../components/SideBar'
 
 export function ListRestaurants() {
 	return (
@@ -12,7 +13,8 @@ export function ListRestaurants() {
 				<RestaurantThumb restaurantName={'Restaurante Sem Futuro'} />
 				<SearchBar />
 			</Content>
-			<NavigationIcons />
+			<TabBar />
+			<SideBar />
 		</>
 	)
 }

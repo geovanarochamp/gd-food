@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import { House, Ticket, MagnifyingGlass, UserCircle } from 'phosphor-react'
 import { Button, Container } from './styles'
 
-export function NavigationIcons() {
+export function SideBar() {
 	return (
 		<Container>
-			<Link to="/listrestaurants">
+			<Link to="/">
 				<Button>
 					<House size={20} />
 				</Button>
@@ -20,7 +20,7 @@ export function NavigationIcons() {
 					<MagnifyingGlass size={20} />
 				</Button>
 			</Link>
-			<Link to="/">
+			<Link to="/account">
 				<Button>
 					<UserCircle size={20} />
 				</Button>

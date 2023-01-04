@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { ArrowLeft, PaperPlaneRight } from 'phosphor-react'
 import {
 	Button,
@@ -9,7 +10,18 @@ import {
 } from './styles'
 import { Link } from 'react-router-dom'
 
+import { useAuth } from '../../hooks/auth'
+
 export function Login() {
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const { signIn } = useAuth()
+
+	function handleSignIn() {
+		event.preventDefault()
+		signIn({ email, password })
+	}
+
 	return (
 		<Container>
 			<div>
@@ -33,9 +45,19 @@ export function Login() {
 				</Headline>
 			</div>
 			<LoginForm>
-				<input type="text" placeholder="e-mail" id="emailInput" />
-				<input type="text" placeholder="senha" id="passwordInput" />
-				<button>
+				<input
+					type="text"
+					placeholder="e-mail"
+					id="emailInput"
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+				<input
+					type="password"
+					placeholder="senha"
+					id="passwordInput"
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+				<button onClick={handleSignIn}>
 					<PaperPlaneRight size={20} /> Entrar
 				</button>
 				<span>Esqueci minha senha</span>
