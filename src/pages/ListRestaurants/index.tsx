@@ -50,7 +50,7 @@ export function ListRestaurants() {
 					))}
 				{isVisible && <SearchBar setSearch={setSearch} />}
 			</Content>
-			<TabBar />
+			<TabBar isVisible={isVisible} setIsVisible={setIsVisible} />
 			<SideBar isVisible={isVisible} setIsVisible={setIsVisible} />
 		</>
 	)
