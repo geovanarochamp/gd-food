@@ -44,9 +44,7 @@ export function ListRestaurants() {
 			<Content>
 				{restaurants &&
 					restaurants.map((restaurant) => (
-						<li key={String(restaurant.id)}>
-							<RestaurantThumb data={restaurant} />
-						</li>
+						<RestaurantThumb key={String(restaurant.id)} data={restaurant} />
 					))}
 				{isVisible && <SearchBar setSearch={setSearch} />}
 			</Content>

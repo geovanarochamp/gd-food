@@ -1,4 +1,5 @@
 import { Star, Clock, Ticket } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 import {
 	Container,
 	InfoContent,
@@ -9,6 +10,7 @@ import {
 
 type RestaurantThumbProps = {
 	data: {
+		id: number
 		name: string
 		description: string
 		profile_image: string
@@ -20,8 +22,13 @@ type RestaurantThumbProps = {
 }
 
 export function RestaurantThumb({ data }: RestaurantThumbProps) {
+	const navigate = useNavigate()
+
+	function handleOpenMenu(id: number) {
+		navigate(`/restaurantmenu/${id}`)
+	}
 	return (
-		<Container>
+		<Container onClick={() => handleOpenMenu(data.id)}>
 			<img src={data.cover_image} alt="" />
 
 			<RestaurantWrapper>

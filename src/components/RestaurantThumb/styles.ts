@@ -6,6 +6,8 @@ export const Container = styled.div`
 	box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
 	overflow: hidden;
 
+	cursor: pointer;
+
 	img {
 		width: 100%;
 		height: 10rem;
@@ -36,6 +38,10 @@ export const RestaurantWrapper = styled.div`
 		margin-top: 4px;
 		font-size: 1.2rem;
 		color: ${(props) => props.theme['gray-700']};
+	}
+
+	strong:hover {
+		color: ${(props) => props.theme['red-500']};
 	}
 `
 

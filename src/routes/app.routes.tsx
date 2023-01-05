@@ -8,7 +8,7 @@ export function AppRoutes() {
 	return (
 		<Routes>
 			<Route path="/" element={<ListRestaurants />} />
-			<Route path="/restaurant/:id" element={<RestaurantArea />} />
+			<Route path="/restaurantmenu/:id" element={<RestaurantArea />} />
 			<Route path="/account" element={<MyAccount />} />
 		</Routes>
 	)
