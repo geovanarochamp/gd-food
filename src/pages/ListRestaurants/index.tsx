@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { TabBar } from '../../components/TabBar'
 import { RestaurantThumb } from '../../components/RestaurantThumb'
@@ -14,19 +14,29 @@ type ResponseDataProps = {
 	description: string
 	profile_image: string
 	cover_image: string
+	rate: number
+	delivery_time: string
+	delivery_fee: number
 }
 
 export function ListRestaurants() {
+	const [isVisible, setIsVisible] = useState(false)
 	const [restaurants, setRestaurant] = useState([] as ResponseDataProps[])
+	const [search, setSearch] = useState('')
+
+	async function fetchRestaurants() {
+		const response = await api.get('/restaurants')
+		setRestaurant(response.data)
+	}
+
+	async function fetchRestaurantsSearch() {
+		const response = await api.get(`/restaurants/${search}`)
+		setRestaurant(response.data)
+	}
 
 	useEffect(() => {
-		async function fetchRestaurants() {
-			const response = await api.get('/restaurants')
-			setRestaurant(response.data)
-		}
-
-		fetchRestaurants()
-	}, [])
+		search ? fetchRestaurantsSearch() : fetchRestaurants()
+	}, [search])
 
 	return (
 		<>
@@ -38,10 +48,10 @@ export function ListRestaurants() {
 							<RestaurantThumb data={restaurant} />
 						</li>
 					))}
-				<SearchBar />
+				{isVisible && <SearchBar setSearch={setSearch} />}
 			</Content>
 			<TabBar />
-			<SideBar />
+			<SideBar isVisible={isVisible} setIsVisible={setIsVisible} />
 		</>
 	)
 }
