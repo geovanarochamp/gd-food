@@ -1,13 +1,10 @@
 import { Link } from 'react-router-dom'
 import { House, Ticket, MagnifyingGlass, UserCircle } from 'phosphor-react'
 import { Button, Container } from './styles'
+import { useSearchBar } from '../../hooks/useSearchBar'
 
-type SideBarProps = {
-	isVisible: boolean
-	setIsVisible: (isVisible: boolean) => void
-}
-
-export function SideBar({ isVisible, setIsVisible }: SideBarProps) {
+export function SideBar() {
+	const { isVisible, setIsVisible } = useSearchBar()
 	return (
 		<Container>
 			<Link to="/">

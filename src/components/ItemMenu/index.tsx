@@ -1,20 +1,31 @@
 import { Container, InfoContent, InfoWrapper } from './styles'
 
 type ItemMenuProps = {
-	itemName: string
-	itemCover: string
+	item: {
+		id: number
+		name: string
+		description: string
+		type: string
+		item_image: string
+		price: number
+	}
 }
 
-export function ItemMenu({ itemName, itemCover }: ItemMenuProps) {
+export function ItemMenu(data: ItemMenuProps) {
+	const price = data?.item?.price
+
 	return (
 		<Container>
-			<img src={itemCover} alt="" />
+			<img src={data.item.item_image} alt="" />
 			<InfoContent>
 				<InfoWrapper>
-					<strong>{itemName}</strong>
-					<span>Carne, arroz, batata frita</span>
+					<strong>{data.item.name}</strong>
+					<span>{data.item.description}</span>
 				</InfoWrapper>
-				<span>R$21,21</span>
+
+				<span>
+					R$ {price ? data?.item?.price?.toFixed(2).replace('.', ',') : 0}
+				</span>
 			</InfoContent>
 		</Container>
 	)

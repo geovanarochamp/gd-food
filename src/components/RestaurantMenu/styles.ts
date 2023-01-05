@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	height: calc(100vh - 28rem);
-	margin: 0 3rem;
+	margin-left: 3rem;
 	overflow: auto;
 `
 export const MenuContent = styled.div`
-	margin-top: 2.4rem;
+	margin-top: 3rem;
 
 	h3 {
 		font-size: 1.2rem;

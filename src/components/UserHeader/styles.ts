@@ -26,6 +26,10 @@ export const UserInfo = styled.div`
 	text-align: right;
 	gap: 0.4rem;
 
+	h3 strong {
+		color: ${(props) => props.theme['red-500']};
+	}
+
 	h3 span {
 		display: flex;
 		align-items: center;

@@ -5,13 +5,16 @@ import { defaultTheme } from './styles/themes/defaultTheme'
 
 import { Routes } from './routes'
 import { AuthProvider } from './hooks/auth'
+import { SearchBarProvider } from './hooks/useSearchBar'
 
 function App() {
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<AuthProvider>
-				<Routes />
-				<GlobalStyle />
+				<SearchBarProvider>
+					<Routes />
+					<GlobalStyle />
+				</SearchBarProvider>
 			</AuthProvider>
 		</ThemeProvider>
 	)

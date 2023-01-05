@@ -25,7 +25,7 @@ export function RestaurantThumb({ data }: RestaurantThumbProps) {
 	const navigate = useNavigate()
 
 	function handleOpenMenu(id: number) {
-		navigate(`/restaurantmenu/${id}`)
+		navigate(`/menu/${id}`)
 	}
 	return (
 		<Container onClick={() => handleOpenMenu(data.id)}>

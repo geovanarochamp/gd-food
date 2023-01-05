@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-import { TabBar } from '../../components/TabBar'
 import { RestaurantThumb } from '../../components/RestaurantThumb'
 import { SearchBar } from '../../components/SearchBar'
-import { UserHeader } from '../../components/UserHeader'
 import { Content } from './styles'
-import { SideBar } from '../../components/SideBar'
 import { api } from '../../service/api'
+import { useSearchBar } from '../../hooks/useSearchBar'
 
 type ResponseDataProps = {
 	id: number
@@ -20,9 +18,9 @@ type ResponseDataProps = {
 }
 
 export function ListRestaurants() {
-	const [isVisible, setIsVisible] = useState(false)
 	const [restaurants, setRestaurant] = useState([] as ResponseDataProps[])
 	const [search, setSearch] = useState('')
+	const { isVisible } = useSearchBar()
 
 	async function fetchRestaurants() {
 		const response = await api.get('/restaurants')
@@ -36,11 +34,11 @@ export function ListRestaurants() {
 
 	useEffect(() => {
 		search ? fetchRestaurantsSearch() : fetchRestaurants()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [search])
 
 	return (
 		<>
-			<UserHeader userName={'Fred'} />
 			<Content>
 				{restaurants &&
 					restaurants.map((restaurant) => (
@@ -48,8 +46,6 @@ export function ListRestaurants() {
 					))}
 				{isVisible && <SearchBar setSearch={setSearch} />}
 			</Content>
-			<TabBar isVisible={isVisible} setIsVisible={setIsVisible} />
-			<SideBar isVisible={isVisible} setIsVisible={setIsVisible} />
 		</>
 	)
 }

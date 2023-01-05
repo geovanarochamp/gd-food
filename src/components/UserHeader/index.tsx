@@ -1,14 +1,12 @@
 /* eslint-disable no-undef */
 import { List, MapPin } from 'phosphor-react'
 import { useEffect, useState } from 'react'
+import { useAuth } from '../../hooks/auth'
 import { Button, Header, UserInfo } from './styles'
 
-type UserHeaderProps = {
-	userName: string
-}
-
-export function UserHeader({ userName }: UserHeaderProps) {
+export function UserHeader() {
 	const [formatLocation, setFormatLocation] = useState('Buscando localização')
+	const { user } = useAuth()
 
 	function getCurrentLocation() {
 		navigator.geolocation.getCurrentPosition((position) => {
@@ -57,7 +55,9 @@ export function UserHeader({ userName }: UserHeaderProps) {
 			</Button>
 
 			<UserInfo>
-				<h3>Olá, {userName}! Você está neste endereço? </h3>
+				<h3>
+					Olá, <strong>{user.name}!</strong> Você está neste endereço?{' '}
+				</h3>
 				<h3>
 					<span>
 						<MapPin size={15} /> {formatLocation}
