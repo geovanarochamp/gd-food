@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-	margin: 1.5rem;
+	margin: 3rem;
 	border-radius: 8px;
 	box-shadow: 0 3px 6px rgb(0 0 0 / 10%);
 	overflow: hidden;
@@ -21,7 +21,7 @@ export const Container = styled.div`
 export const RestaurantWrapper = styled.div`
 	display: flex;
 	gap: 2rem;
-	padding: 0 1rem 1rem;
+	padding: 0 1rem 1rem 2rem;
 
 	color: ${(props) => props.theme['gray-500']};
 
@@ -42,6 +42,13 @@ export const RestaurantWrapper = styled.div`
 export const RestaurantInfo = styled.div`
 	display: flex;
 	flex-direction: column;
+
+	strong {
+		font-size: 1.6rem;
+	}
+	span {
+		font-size: 1.4rem;
+	}
 `
 
 export const InfoWrapper = styled.div`

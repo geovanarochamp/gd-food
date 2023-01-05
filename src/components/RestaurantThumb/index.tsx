@@ -13,6 +13,9 @@ type RestaurantThumbProps = {
 		description: string
 		profile_image: string
 		cover_image: string
+		rate: number
+		delivery_time: string
+		delivery_fee: number
 	}
 }
 
@@ -25,16 +28,21 @@ export function RestaurantThumb({ data }: RestaurantThumbProps) {
 				<img src={data.profile_image} alt="" />
 				<RestaurantInfo>
 					<strong>{data.name}</strong>
-					<span>Comida Brasileira</span>
+					<span>{data.description}</span>
 					<InfoWrapper>
 						<InfoContent>
-							<Star weight="fill" size={8} /> <span>4,5</span>
+							<Star weight="fill" size={15} /> <span>{data.rate}</span>
 						</InfoContent>
 						<InfoContent>
-							<Clock size={8} /> <span>30-40min</span>
+							<Clock size={15} /> <span>{data.delivery_time}</span>
 						</InfoContent>
 						<InfoContent>
-							<Ticket size={8} /> <span>R$4,99</span>
+							<Ticket size={15} />{' '}
+							<span>
+								{data.delivery_fee > 0
+									? 'R$ ' + data.delivery_fee
+									: 'Frete grátis'}
+							</span>
 						</InfoContent>
 					</InfoWrapper>
 				</RestaurantInfo>

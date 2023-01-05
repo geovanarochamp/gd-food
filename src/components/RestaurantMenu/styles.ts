@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 	height: calc(100vh - 28rem);
-	margin: 0 1.5rem;
+	margin: 0 3rem;
 	overflow: auto;
 `
 export const MenuContent = styled.div`
