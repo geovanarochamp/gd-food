@@ -46,7 +46,7 @@ export function Login() {
 			</div>
 			<LoginForm>
 				<input
-					type="text"
+					type="email"
 					placeholder="e-mail"
 					id="emailInput"
 					onChange={(e) => setEmail(e.target.value)}
